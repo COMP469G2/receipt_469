@@ -15,11 +15,10 @@ if uploaded_file is not None:
 
     extracted_text = pytesseract.image_to_string(image)
 
-    # You can delete this if you don't want it
     st.write("Extracted Text:")
     st.write(extracted_text)
 
-    # Model api URL
+    # Model api URL (You have to update this part)
     api_url = "https://www.google.com"
 
     payload = {"text": extracted_text}
@@ -32,7 +31,7 @@ if uploaded_file is not None:
         st.write("Transformed Output:")
         st.json(transformed_output)
 
-        # This part will be the formating part using the json (transformed_output)
+        # This part will be the nice formatting part using the json (transformed_output)
     else:
         st.write(
             "Error: Could not get a response from the model. Please try again later."
